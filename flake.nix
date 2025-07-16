@@ -25,12 +25,11 @@
               pkgs.lolcat
               pkgs.figlet
               pkgs.python312
-              pkgs.nix
             ]}"
           ];
         }
         
-        #script
+        #script without shebang
         ''
           echo "Hello, myself!" | figlet | lolcat
           echo "You're a great person!" | cowsay | lolcat
@@ -39,7 +38,6 @@
           echo Your python version for this script is:
           python --version
           echo ---------------------
-          #another version of python in a nested nix shell
           echo hello version is:
           ${pkgs.hello}/bin/hello --version
           echo
